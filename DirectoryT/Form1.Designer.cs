@@ -53,6 +53,9 @@ namespace DirectoryT
             this.Delete_bt = new System.Windows.Forms.ToolStripMenuItem();
             this.Duplicate_bt = new System.Windows.Forms.ToolStripMenuItem();
             this.Rename_bt = new System.Windows.Forms.ToolStripMenuItem();
+            this.CopyMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PastMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Path_panel.SuspendLayout();
             this.Lower_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -180,7 +183,7 @@ namespace DirectoryT
             // 
             // treeView1
             // 
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -218,7 +221,7 @@ namespace DirectoryT
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.Color.White;
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.ContextMenuStrip = this.contextMenuCreate;
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -237,9 +240,12 @@ namespace DirectoryT
             this.Create_bt,
             this.Delete_bt,
             this.Duplicate_bt,
-            this.Rename_bt});
+            this.Rename_bt,
+            this.CopyMenuItem,
+            this.PastMenuItem,
+            this.CutToolStripMenuItem});
             this.contextMenuCreate.Name = "contextMenuStrip1";
-            this.contextMenuCreate.Size = new System.Drawing.Size(191, 100);
+            this.contextMenuCreate.Size = new System.Drawing.Size(211, 200);
             this.contextMenuCreate.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuCreate_Opening);
             // 
             // Create_bt
@@ -248,7 +254,7 @@ namespace DirectoryT
             this.File_bt,
             this.Folder_bt});
             this.Create_bt.Name = "Create_bt";
-            this.Create_bt.Size = new System.Drawing.Size(190, 24);
+            this.Create_bt.Size = new System.Drawing.Size(210, 24);
             this.Create_bt.Text = "Создать";
             // 
             // File_bt
@@ -268,23 +274,44 @@ namespace DirectoryT
             // Delete_bt
             // 
             this.Delete_bt.Name = "Delete_bt";
-            this.Delete_bt.Size = new System.Drawing.Size(190, 24);
+            this.Delete_bt.Size = new System.Drawing.Size(210, 24);
             this.Delete_bt.Text = "Удалить";
             this.Delete_bt.Click += new System.EventHandler(this.Delete_bt_Click);
             // 
             // Duplicate_bt
             // 
             this.Duplicate_bt.Name = "Duplicate_bt";
-            this.Duplicate_bt.Size = new System.Drawing.Size(190, 24);
+            this.Duplicate_bt.Size = new System.Drawing.Size(210, 24);
             this.Duplicate_bt.Text = "Дублировать";
             this.Duplicate_bt.Click += new System.EventHandler(this.Duplicate_bt_Click);
             // 
             // Rename_bt
             // 
             this.Rename_bt.Name = "Rename_bt";
-            this.Rename_bt.Size = new System.Drawing.Size(190, 24);
+            this.Rename_bt.Size = new System.Drawing.Size(210, 24);
             this.Rename_bt.Text = "Переименовать";
             this.Rename_bt.Click += new System.EventHandler(this.Rename_bt_Click);
+            // 
+            // CopyMenuItem
+            // 
+            this.CopyMenuItem.Name = "CopyMenuItem";
+            this.CopyMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.CopyMenuItem.Text = "Копировать";
+            this.CopyMenuItem.Click += new System.EventHandler(this.CopyMenuItem_Click);
+            // 
+            // PastMenuItem
+            // 
+            this.PastMenuItem.Name = "PastMenuItem";
+            this.PastMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.PastMenuItem.Text = "Вставить";
+            this.PastMenuItem.Click += new System.EventHandler(this.PastMenuItem_Click);
+            // 
+            // CutToolStripMenuItem
+            // 
+            this.CutToolStripMenuItem.Name = "CutToolStripMenuItem";
+            this.CutToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.CutToolStripMenuItem.Text = "Вырезать";
+            this.CutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -329,6 +356,9 @@ namespace DirectoryT
         private System.Windows.Forms.ToolStripMenuItem Rename_bt;
         private System.Windows.Forms.TextBox Name_tb;
         private System.Windows.Forms.ListView Search_ListView;
+        private System.Windows.Forms.ToolStripMenuItem CopyMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PastMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CutToolStripMenuItem;
     }
 }
 

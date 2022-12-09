@@ -10,6 +10,7 @@ namespace DirectoryT
     class Folder : MyObject
     {
         public List<MyObject> Children;
+        private MyObject Buffer;
         public Folder() : base()
         {
             _Name = "Этот компьютер";
@@ -61,6 +62,16 @@ namespace DirectoryT
         public void SortByWeight()
         {
             Children.Sort((x, y) => x._Weight.CompareTo(y._Weight));
+        }
+
+        public void SetBuffer(MyObject myObject)
+        {
+            Buffer = myObject;
+        }
+
+        public MyObject GetBuffer()
+        {
+            return Buffer;
         }
 
     }
