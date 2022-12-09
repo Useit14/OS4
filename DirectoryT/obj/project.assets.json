@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\DirectoryT\\DirectoryT\\DirectoryT.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\OS4\\DirectoryT\\DirectoryT.csproj",
       "projectName": "DirectoryT",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\DirectoryT\\DirectoryT\\DirectoryT.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\OS4\\DirectoryT\\DirectoryT.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\DirectoryT\\DirectoryT\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\OS4\\DirectoryT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

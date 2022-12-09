@@ -30,9 +30,9 @@ namespace DirectoryT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
             this.SortBox = new System.Windows.Forms.ComboBox();
             this.Path_panel = new System.Windows.Forms.Panel();
             this.Search_textBox = new System.Windows.Forms.TextBox();
@@ -53,6 +53,9 @@ namespace DirectoryT
             this.Delete_bt = new System.Windows.Forms.ToolStripMenuItem();
             this.Duplicate_bt = new System.Windows.Forms.ToolStripMenuItem();
             this.Rename_bt = new System.Windows.Forms.ToolStripMenuItem();
+            this.CopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Path_panel.SuspendLayout();
             this.Lower_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -186,12 +189,12 @@ namespace DirectoryT
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Node1";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Node0";
+            treeNode5.Name = "Node1";
+            treeNode5.Text = "Node1";
+            treeNode6.Name = "Node0";
+            treeNode6.Text = "Node0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(147, 448);
             this.treeView1.TabIndex = 0;
             this.treeView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDoubleClick);
@@ -237,9 +240,12 @@ namespace DirectoryT
             this.Create_bt,
             this.Delete_bt,
             this.Duplicate_bt,
-            this.Rename_bt});
+            this.Rename_bt,
+            this.CopyToolStripMenuItem,
+            this.PastToolStripMenuItem,
+            this.CutToolStripMenuItem});
             this.contextMenuCreate.Name = "contextMenuStrip1";
-            this.contextMenuCreate.Size = new System.Drawing.Size(191, 100);
+            this.contextMenuCreate.Size = new System.Drawing.Size(211, 200);
             this.contextMenuCreate.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuCreate_Opening);
             // 
             // Create_bt
@@ -248,7 +254,7 @@ namespace DirectoryT
             this.File_bt,
             this.Folder_bt});
             this.Create_bt.Name = "Create_bt";
-            this.Create_bt.Size = new System.Drawing.Size(190, 24);
+            this.Create_bt.Size = new System.Drawing.Size(210, 24);
             this.Create_bt.Text = "Создать";
             // 
             // File_bt
@@ -268,23 +274,44 @@ namespace DirectoryT
             // Delete_bt
             // 
             this.Delete_bt.Name = "Delete_bt";
-            this.Delete_bt.Size = new System.Drawing.Size(190, 24);
+            this.Delete_bt.Size = new System.Drawing.Size(210, 24);
             this.Delete_bt.Text = "Удалить";
             this.Delete_bt.Click += new System.EventHandler(this.Delete_bt_Click);
             // 
             // Duplicate_bt
             // 
             this.Duplicate_bt.Name = "Duplicate_bt";
-            this.Duplicate_bt.Size = new System.Drawing.Size(190, 24);
+            this.Duplicate_bt.Size = new System.Drawing.Size(210, 24);
             this.Duplicate_bt.Text = "Дублировать";
             this.Duplicate_bt.Click += new System.EventHandler(this.Duplicate_bt_Click);
             // 
             // Rename_bt
             // 
             this.Rename_bt.Name = "Rename_bt";
-            this.Rename_bt.Size = new System.Drawing.Size(190, 24);
+            this.Rename_bt.Size = new System.Drawing.Size(210, 24);
             this.Rename_bt.Text = "Переименовать";
             this.Rename_bt.Click += new System.EventHandler(this.Rename_bt_Click);
+            // 
+            // CopyToolStripMenuItem
+            // 
+            this.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem";
+            this.CopyToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.CopyToolStripMenuItem.Text = "Копировать";
+            this.CopyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
+            // 
+            // PastToolStripMenuItem
+            // 
+            this.PastToolStripMenuItem.Name = "PastToolStripMenuItem";
+            this.PastToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.PastToolStripMenuItem.Text = "Вставить";
+            this.PastToolStripMenuItem.Click += new System.EventHandler(this.PastToolStripMenuItem_Click);
+            // 
+            // CutToolStripMenuItem
+            // 
+            this.CutToolStripMenuItem.Name = "CutToolStripMenuItem";
+            this.CutToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.CutToolStripMenuItem.Text = "Вырезать";
+            this.CutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -329,6 +356,9 @@ namespace DirectoryT
         private System.Windows.Forms.ToolStripMenuItem Rename_bt;
         private System.Windows.Forms.TextBox Name_tb;
         private System.Windows.Forms.ListView Search_ListView;
+        private System.Windows.Forms.ToolStripMenuItem CopyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PastToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CutToolStripMenuItem;
     }
 }
 

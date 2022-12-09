@@ -281,16 +281,22 @@ namespace DirectoryT
             if (listView1.SelectedItems.Count != 0)
             {
                 Hide(Create_bt);
+                Hide(PastToolStripMenuItem);
                 Seek(Delete_bt);
                 Seek(Duplicate_bt);
                 Seek(Rename_bt);
+                Seek(CopyToolStripMenuItem);
+                Seek(CutToolStripMenuItem);
             }
             else
             {
                 Seek(Create_bt);
+                Seek(PastToolStripMenuItem);
                 Hide(Delete_bt);
                 Hide(Duplicate_bt);
                 Hide(Rename_bt);
+                Hide(CopyToolStripMenuItem);
+                Hide(CutToolStripMenuItem);
             }
         }
 
@@ -616,5 +622,75 @@ namespace DirectoryT
             Seek(listView1);
         }
 
+        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count != 0)
+            {
+                var index = listView1.FocusedItem.Index;
+                MyObject child = ActiveFolder.Return_Children()[index];
+                var name = child._Name + " — Копия " + child.CountIs;
+                child.CountIs++;
+                Root.SetBuffer(child);
+
+            }
+        }
+
+        private void PastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var child = Root.GetBuffer();
+            if (child is Folder)
+            {
+                Folder select = child as Folder;
+                try
+                {
+                    Folder Duplicate = new Folder(child._Name, ActiveFolder);
+                    List<MyObject> list = new List<MyObject>();
+                    foreach (MyObject obj in select.Return_Children())
+                    {
+                        DuplicateFunction(obj, obj._Name, Duplicate);
+                    }
+
+                }
+                catch (Exception excep)
+                {
+                    MessageBox.Show(excep.Message);
+                }
+            }
+            else
+            {
+                File select = child as File;
+                try
+                {
+                    MyObject newFile = new File(child._Name, ActiveFolder, select._Weight);
+                }
+                catch (Exception excep)
+                {
+                    MessageBox.Show(excep.Message);
+                }
+            }
+            UpdateForm();
+        }
+        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count != 0)
+            {
+                var index = listView1.FocusedItem.Index;
+                MyObject child = ActiveFolder.Return_Children()[index];
+                child.CountIs++;
+                Root.SetBuffer(child);
+                for (int i = 0; i < listView1.SelectedItems.Count; i++)
+                {
+                    try
+                    {
+                        ActiveFolder.Delete_Child(listView1.SelectedItems[i].Index - i);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                UpdateForm();
+            }
+        }
     }
 }
